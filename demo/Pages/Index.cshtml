@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+
+    <h2>Built using PaymentParameters properties</h2>
+    <br />
+    <form method="POST" action="@Model.PaymentParams.PayboxUrl">
+        <input type="hidden" name="PBX_ANNULE" value="@Model.PaymentParams.PBX_ANNULE">
+        <input type="hidden" name="PBX_ATTENTE" value="@Model.PaymentParams.PBX_ATTENTE">
+        <input type="hidden" name="PBX_CMD" value="@Model.PaymentParams.PBX_CMD">
+        <input type="hidden" name="PBX_DEVISE" value="@Model.PaymentParams.PBX_DEVISE">
+        <input type="hidden" name="PBX_EFFECTUE" value="@Model.PaymentParams.PBX_EFFECTUE">
+        @if (!string.IsNullOrEmpty(@Model.PaymentParams.PBX_ERRORCODETEST))
+        {
+            <input type="hidden" name="PBX_ERRORCODETEST" value="@Model.PaymentParams.PBX_ERRORCODETEST">
+        }
+        <input type="hidden" name="PBX_HASH" value="@Model.PaymentParams.PBX_HASH">
+        <input type="hidden" name="PBX_IDENTIFIANT" value="@Model.PaymentParams.PBX_IDENTIFIANT">
+        @if (!string.IsNullOrEmpty(@Model.PaymentParams.PBX_LANGUE))
+        {
+            <input type="hidden" name="PBX_LANGUE" value="@Model.PaymentParams.PBX_LANGUE">
+        }
+        @if (!string.IsNullOrEmpty(@Model.PaymentParams.PBX_NOM_MARCHAND))
+        {
+            <input type="hidden" name="PBX_NOM_MARCHAND" value="@Model.PaymentParams.PBX_NOM_MARCHAND">
+        }
+        <input type="hidden" name="PBX_PORTEUR" value="@Model.PaymentParams.PBX_PORTEUR">
+        <input type="hidden" name="PBX_RANG" value="@Model.PaymentParams.PBX_RANG">
+        <input type="hidden" name="PBX_REFUSE" value="@Model.PaymentParams.PBX_REFUSE">
+        <input type="hidden" name="PBX_REPONDRE_A" value="@Model.PaymentParams.PBX_REPONDRE_A">
+        <input type="hidden" name="PBX_RETOUR" value="@Model.PaymentParams.PBX_RETOUR">
+        <input type="hidden" name="PBX_SITE" value="@Model.PaymentParams.PBX_SITE">
+        <input type="hidden" name="PBX_TIME" value="@Model.PaymentParams.PBX_TIME">
+        <input type="hidden" name="PBX_TOTAL" value="@Model.PaymentParams.PBX_TOTAL">
+        <input type="hidden" name="PBX_HMAC" value="@Model.PaymentParams.PBX_HMAC">
+        <input type="submit" value="Go to Payment page" class="btn btn-primary">
+    </form>
+
+    <hr />
+
+    <h2>Built using PaymentParameters GetAsFormValues</h2>
+    <br />
+    <form method="POST" action="@Model.PaymentParams.PayboxUrl">
+        @Html.Raw(@Model.PaymentParams.GetAsFormValues())
+        <input type="submit" value="Go to Payment page" class="btn btn-primary">
+    </form>
+
+</div>
