@@ -28,7 +28,7 @@ Start by taking a look at the demo project in this repository. Now, here are the
 
 1. Add a `PayboxSettings` section in your config file. This section must contain your dev or prod settings.
 
-Here is a basic appsettings.json section with mandatory values and some optionnal ones :
+Here is a basic appsettings.json section with mandatory values and some optional ones :
 
 ```json
   "PayboxSettings": {
@@ -57,6 +57,10 @@ Here is a basic appsettings.json section with mandatory values and some optionna
     "PublicKeyAbsolutePath": "PUBLIC_KEY_PATH"
   }
 ```
+
+`PBX_SITE`, `PBX_RANG` and `PBX_IDENTIFIANT` are provided by Paybox upon contract signing.
+
+`MerchantSecreteKey` is your shop secret Key generated on the Back office. Keep in mind that Keys for Test environment and production are not the same.
 
 `PayboxServersIPsWhitelist` is used to verify that the IPN is sent by an official Paybox server. IPs for production can be found in chapter *§12.6 - URLs to call and IP address*.
 
