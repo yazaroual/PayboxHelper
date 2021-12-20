@@ -1,5 +1,5 @@
 # PayboxHelper
-Integrate Paybox System faster into your .Net project
+Integrate Paybox System faster into your .NET project
 
 ## What is Paybox System ?
 Paybox is a payment system provided by Verifone. It displays a payment page and handles the usual payment checks.
@@ -8,7 +8,7 @@ Further informations can be found in their website : [Paybox Sytem](https://www1
 
 ## What is Paybox Helper ?
 
-Paybox Helper is a .Net library that will help you :
+Paybox Helper is a .NET library that will help you :
 * Load Paybox configs from your config file
 * Check that your config is correct
 * Sign payment request
@@ -65,6 +65,8 @@ Here is a basic appsettings.json section with mandatory values and some optional
 `PayboxServersIPsWhitelist` is used to verify that the IPN is sent by an official Paybox server. IPs for production can be found in chapter *§12.6 - URLs to call and IP address*.
 
 `PublicKeyAbsolutePath` Must be an absolute path to the Paybox Public Key. Key can be downladed from [here](http://www1.paybox.com/espace-integrateur-documentation/manuels/)
+
+> :information_source: If you need to add any additional property to send to Paybox Servers just declare it using it's Paybox name. For instance, if you want your payment page to be displayed in German, add `"PBX_LANGUE": "DEU"` to your configuration file and it will automatically be apended to the payment request.
 
 If you set an optional value to null or delete it it won't be used for building the request.
 If you set a Mandatory value to null, an exception will be raised by Paybox Helper.
