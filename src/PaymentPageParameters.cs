@@ -49,7 +49,7 @@ namespace PayboxHelper
         /// </summary>
         public string GetAsQueryString()
         {
-            StringBuilder queryStringBuilder = new();
+            var queryStringBuilder = new StringBuilder();
             queryStringBuilder.AppendAsQueryParamIfNotNull(nameof(PBX_1EURO_CODEEXTERNE), PBX_1EURO_CODEEXTERNE);
             queryStringBuilder.AppendAsQueryParamIfNotNull(nameof(PBX_1EURO_DATA), PBX_1EURO_DATA);
             queryStringBuilder.AppendAsQueryParamIfNotNull(nameof(PBX_2MONT1), PBX_2MONT1);
@@ -115,7 +115,7 @@ namespace PayboxHelper
         /// </summary>
         public string GetAsFormValues()
         {
-            StringBuilder inputFieldsBuilder = new();
+            var inputFieldsBuilder = new StringBuilder();
             inputFieldsBuilder.AppendAsFormValueIfNotNull(nameof(PBX_1EURO_CODEEXTERNE), PBX_1EURO_CODEEXTERNE);
             inputFieldsBuilder.AppendAsFormValueIfNotNull(nameof(PBX_1EURO_DATA), PBX_1EURO_DATA);
             inputFieldsBuilder.AppendAsFormValueIfNotNull(nameof(PBX_2MONT1), PBX_2MONT1);

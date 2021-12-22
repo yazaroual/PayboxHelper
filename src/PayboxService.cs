@@ -385,7 +385,7 @@ namespace PayboxHelper
 
             string publicKey = await GetPayboxPublicKeyAsync();
 
-            RSACryptoServiceProvider rsaCSP = new();
+            var rsaCSP = new RSACryptoServiceProvider();
             rsaCSP.ImportSubjectPublicKeyInfo(Convert.FromBase64String(publicKey), out _);
 
             byte[] signedData = Encoding.UTF8.GetBytes(valuesWithoutSignature);
