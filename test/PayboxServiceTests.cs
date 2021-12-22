@@ -401,7 +401,7 @@ namespace PayboxHelper.Tests
         {
             //PBX_SITE, PBX_RANG, PBX_IDENTIFIANT and MerchantSecretKey are all taken from the Test Parameters V8.1 document
             //available in the paybox documentation website
-            PayboxConfigOptions options = new();
+            var options = new PayboxConfigOptions();
             options.MainServerUrl = "https://preprod-tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi";
             options.MainServerTestUrl = "https://preprod-tpeweb.paybox.com/load.html";
             options.BackupServerUrl = "https://preprod-tpeweb.paybox.com/cgi/MYchoix_pagepaiement.cgi";

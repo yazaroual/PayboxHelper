@@ -71,7 +71,7 @@ Here is a basic appsettings.json section with mandatory values and some optional
 If you set an optional value to null or delete it it won't be used for building the request.
 If you set a Mandatory value to null, an exception will be raised by Paybox Helper.
 
-2. Configure Paybox helper in your startup.cs
+2. Configure Paybox helper in your startup.cs by adding the following declaration to ConfigureServices method :
 
 ```cs
 services.AddPayboxHelper(Configuration.GetSection(PayboxConfigOptions.PayboxSettings));
@@ -102,7 +102,7 @@ var request = new PaymentRequest()
 <form method="POST" action="@Model.PaymentParams.PayboxUrl">
         @Html.Raw(@Model.PaymentParams.GetAsFormValues())
         <input type="submit" value="Go to Payment page" class="btn btn-primary">
-    </form>
+</form>
 ```
 
 7. You should now have a button that will send your user to the Paybox Payment page !
